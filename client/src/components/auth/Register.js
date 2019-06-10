@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import '../../styles/_common.scss';
+import '../../styles/register.scss';
 
 class Register extends Component {
   constructor() {
@@ -23,52 +25,43 @@ class Register extends Component {
       this.props.history.push("/dashboard");
     }
   }
-
-  componentWillReceiveProps(nextProps) {
+  
+componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
       });
     }
   }
-
-  onChange = e => {
+onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-
-  onSubmit = e => {
+onSubmit = e => {
     e.preventDefault();
-
-    const newUser = {
+const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-
-    this.props.registerUser(newUser, this.props.history);
+this.props.registerUser(newUser, this.props.history); 
   };
-
-  render() {
+render() {
     const { errors } = this.state;
-
-    return (
-      <div className="container">
+return (
+      <div className="container text-center">
         <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
+          <div className="col s8 offset-s2 register">
+            
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Register</b> below
+                <b>Register</b>
               </h4>
               <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
+            <form noValidate onSubmit={this.onSubmit} className="container text-center" style={{"width" : "350px" , "textAlign" : "center"}}>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
@@ -76,11 +69,12 @@ class Register extends Component {
                   error={errors.name}
                   id="name"
                   type="text"
+                  placeholder="Name"
                   className={classnames("", {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name"><img src={require('../../images/girl.png')} alt="" style={{"width" : "40px", "paddingRight" : "20px"}}/></label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
@@ -90,11 +84,12 @@ class Register extends Component {
                   error={errors.email}
                   id="email"
                   type="email"
+                  placeholder="Email"
                   className={classnames("", {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email"><img src={require('../../images/gmail.png')} alt="" style={{"width" : "40px", "paddingRight" : "20px"}}/></label>
                 <span className="red-text">{errors.email}</span>
               </div>
               <div className="input-field col s12">
@@ -104,11 +99,12 @@ class Register extends Component {
                   error={errors.password}
                   id="password"
                   type="password"
+                  placeholder="Password"
                   className={classnames("", {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                  <label htmlFor="password"><img src={require('../../images/password.png')} alt="" style={{"width" : "40px", "paddingRight" : "20px"}}/></label> 
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="input-field col s12">
@@ -118,26 +114,16 @@ class Register extends Component {
                   error={errors.password2}
                   id="password2"
                   type="password"
+                  placeholder="Confirm Password"
                   className={classnames("", {
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
-                <span className="red-text">{errors.password2}</span>
+                  <label htmlFor="password2"><img src={require('../../images/password.png')} alt="" style={{"width" : "40px", "paddingRight" : "20px"}}/></label>                
+                  <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
-                </button>
+                <button type="submit" className="button" style={{"marginTop": "10px"}}>Register</button>
               </div>
             </form>
           </div>

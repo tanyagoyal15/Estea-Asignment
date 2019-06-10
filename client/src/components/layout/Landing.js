@@ -1,46 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import '../../styles/landing.scss';
+import '../../styles/_common.scss';
 
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="container valign-wrapper">
         <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Build</b> a login/auth app with the{" "}
-              <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
-              scratch
-            </h4>
-            <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
-            </p>
-            <br />
-            <div className="col s6">
+          <div className="col s12 landing-page">
+          <h1 className="center-align bold">Welcome!!</h1>
+          <b className="center-align">Please LogIn to Access Your Account</b>
+            <div>
               <Link
                 to="/register"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
-                Register
+                <button type="submit" className="button" style={{"margin": "20px 0"}}>Register</button>
               </Link>
             </div>
-            <div className="col s6">
+            <div>
               <Link
                 to="/login"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large btn-flat waves-effect white black-text"
               >
-                Log In
+                <button type="submit" className="button" style={{"margin": "20px 0"}}>Login</button>
               </Link>
             </div>
           </div>

@@ -1,0 +1,60 @@
+$inputwidth : 300px;
+$inputheight : 50px;
+$c1 : rgba(56, 56, 56, 0.2);
+
+.input-field {
+	height: auto;
+	width: $inputwidth;
+	position: relative;
+	padding: 7px;
+	input {
+		width: $inputwidth;
+		font-size: 16px;
+		margin-bottom: 15px;
+		border: none;
+		border-bottom: 1px solid #fff;
+		outline: none;
+		background: transparent !important; 
+		padding-left: 40px;
+		display: block;
+		border-radius: 30px;
+		font-size: 15px;
+  		box-shadow: 0 0 7px 0 $c1;
+  		height: $inputheight;
+  		transform: scale(1);	
+	}
+	input:focus, .input-field input:hover
+ 	{
+		box-shadow: none;
+		border-bottom: 2px solid #ccc;
+		background: transparent !important; 
+		transition: all 0.3s ease;
+		transform: scale(1.09);
+	}
+	input:focus + label, input:hover + label  
+	{
+		top: -25px;
+		left: 0;
+		font-size: 18px;
+		border: none;
+	}
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+    	transition: background-color 5000s ease-in-out 0s;
+	}
+	label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px 20px;
+		font-size: 25px;
+		pointer-events: none;
+		transition: 0.5s;
+	}
+	span {
+		color : red;
+	}
+}
+

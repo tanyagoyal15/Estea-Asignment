@@ -1,0 +1,129 @@
+$c2 : #fff;
+$c9 : #FFEFBA;
+$c10 : #FFFFFF;
+$c11 : #8E2DE2;
+
+
+.box {
+    text-align: center;
+        .row {
+            .title {
+                font-size: 35px;
+                font-weight: bold;
+                text-align: center;
+                z-index: 1;
+                top: 20px;
+                margin: -5% 40%;
+            }
+            .top-section {
+                width: 100%;
+                z-index: 1;
+                box-shadow: 0 0 7px 0 rgba(56, 56, 56, 0.2);
+                margin: 10px 0 20px 0;
+                padding: 10px;
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                        float: right;
+                    }
+            }
+            .profile-section {
+                margin: 0 auto;
+                border-radius: 0 15px 0 15px;
+                background: $c9;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to top, $c10, $c9);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to top, $c10, $c9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    .cover {
+                        background: url('https://dl.dropboxusercontent.com/s/b9zehob0bif4zr0/newyork.jpg') no-repeat center ;
+                        height: 180px;
+                        width: 600px;
+                        position: relative;
+                        -webkit-box-shadow: 0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+                        -moz-box-shadow:    0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+                        box-shadow:         0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+/*                        border-radius: 0 15px 0 0;
+*/                        .avatar {
+                            position: absolute;
+                            background: #000;
+                            border: 5px solid $c2;
+                            cursor:pointer;
+                            top: 125px;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            width: 120px;   
+                            height: 120px;
+                            overflow: hidden;
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            border-radius: 50%;
+                            -webkit-box-shadow: 0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+                            -moz-box-shadow:    0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+                            box-shadow:         0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+                            z-index: 1;
+                                .light {
+                                    top: -65px;
+                                    width: 120px;
+                                    height: 130px;
+                                    position: absolute;
+                                    left: 15px;
+                                    transform:rotate(-30deg);
+                                    -ms-transform:rotate(-30deg); 
+                                    -webkit-transform:rotate(-30deg); 
+                                    z-index: 1;
+                                }
+                        }
+                    }
+                    .main {
+                        padding: 60px 10px 10px;
+                        text-align: center;
+                        width: 600px;
+                        background: transparent;
+                            p {
+                                margin: 20px;
+                                font: 14px/18px "Arial";
+                            }
+                    }
+                    .social {
+                            margin: 10px 0 20px;
+                            text-align: center;
+                            background-color: $c2;
+/*                            border-radius: 0 0 0 15px ;
+*/                            background: transparent;
+/*                            background-color: #F73A8A;
+*/                            padding: 20px 0 10px 0;
+                            border-top: 1px solid $c11; 
+                            width: 600px;
+                                ul {
+                                    li {
+                                        display: inline;
+                                            a {
+                                                font-weight : bold;
+                                                padding : 30px;
+                                                text-decoration : none;
+                                                transform: scale(1);
+                                                img:hover {
+                                                    transform: scale(1.2);   
+                                                    transition: all 0.3s ease;
+                                                }
+                                            }
+                                    }
+                                }
+                    }
+            }
+        }
+    }
+
+
+
+/*.main h1 {
+    font-weight: bold;
+    color: #1A4CEA;
+    font-size: 30px;
+}
+.main h6 {
+    font: italic 16px "NotoSans";
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #88DED6;
+}*/
